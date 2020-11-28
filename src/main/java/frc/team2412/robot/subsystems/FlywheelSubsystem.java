@@ -21,18 +21,20 @@ public class FlywheelSubsystem extends SubsystemBase {
 
 	public FlywheelSubsystem(CANSparkMax flywheelLeftMotor, CANSparkMax flywheelRightMotor) {
 		m_flywheelLeftMotor = flywheelLeftMotor;
+		m_leftEncoder = m_flywheelLeftMotor.getEncoder();
+		m_pidLeftController = m_flywheelLeftMotor.getPIDController();
 		m_flywheelRightMotor = flywheelRightMotor;
+		m_rightEncoder = m_flywheelRightMotor.getEncoder();
+		m_pidRightController = m_flywheelRightMotor.getPIDController();
 
 		m_flywheelRightMotor.setInverted(true);
 
-		configureMotor(m_flywheelLeftMotor, m_leftEncoder, m_pidLeftController);
-		configureMotor(m_flywheelRightMotor, m_rightEncoder, m_pidRightController);
+		configureMotor(m_flywheelLeftMotor);
+		configureMotor(m_flywheelRightMotor);
 		setPIDtoDefault();
 	}
 
-	private void configureMotor(CANSparkMax motor, CANEncoder encoder, CANPIDController pidController) {
-		encoder = motor.getEncoder();
-		pidController = m_flywheelRightMotor.getPIDController();
+	private void configureMotor(CANSparkMax motor) {
 		motor.setIdleMode(IdleMode.kCoast);
 	}
 
