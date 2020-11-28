@@ -1,7 +1,7 @@
 package frc.team2412.robot.subsystems.index;
 
-import com.revrobotics.CANEncoder;
-import com.revrobotics.CANSparkMax;
+import net.thefletcher.revrobotics.CANEncoder;
+import net.thefletcher.revrobotics.CANSparkMax;
 
 public class IndexerMotorFrontSubsystem extends IndexerMotorSideSubsystem {
 

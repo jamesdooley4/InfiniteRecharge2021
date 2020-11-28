@@ -2,7 +2,7 @@ package frc.team2412.robot.subsystems;
 
 import static frc.team2412.robot.subsystems.constants.IntakeConstants.MAX_INTAKE_SPEED;
 
-import com.revrobotics.CANSparkMax;
+import net.thefletcher.revrobotics.CANSparkMax;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.team2412.robot.subsystems.constants.IntakeConstants.IntakeDirection;

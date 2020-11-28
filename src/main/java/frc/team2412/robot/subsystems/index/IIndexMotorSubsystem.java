@@ -1,9 +1,9 @@
 package frc.team2412.robot.subsystems.index;
 
-import com.revrobotics.CANEncoder;
-import com.revrobotics.CANPIDController;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.ControlType;
+import net.thefletcher.revrobotics.CANEncoder;
+import net.thefletcher.revrobotics.CANPIDController;
+import net.thefletcher.revrobotics.CANSparkMax;
+import net.thefletcher.revrobotics.enums.ControlType;
 import com.robototes.math.MathUtils;
 
 import frc.team2412.robot.subsystems.constants.IndexerConstants;

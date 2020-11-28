@@ -7,10 +7,10 @@ import static frc.team2412.robot.subsystems.constants.ClimbConstants.MAX_SPEED;
 import static frc.team2412.robot.subsystems.constants.ClimbConstants.MIN_ARM_EXTENSION;
 import static frc.team2412.robot.subsystems.constants.ClimbConstants.MOTOR_REVOLUTIONS_TO_INCHES;
 
-import com.revrobotics.CANEncoder;
-import com.revrobotics.CANPIDController;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.ControlType;
+import net.thefletcher.revrobotics.CANEncoder;
+import net.thefletcher.revrobotics.CANPIDController;
+import net.thefletcher.revrobotics.CANSparkMax;
+import net.thefletcher.revrobotics.enums.ControlType;
 import com.robototes.units.Distance;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;

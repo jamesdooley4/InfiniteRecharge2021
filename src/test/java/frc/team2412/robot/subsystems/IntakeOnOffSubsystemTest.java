@@ -6,7 +6,7 @@ import static org.mockito.Mockito.mock;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.revrobotics.CANSparkMax;
+import net.thefletcher.revrobotics.CANSparkMax;
 import com.robototes.helpers.MockHardwareExtension;
 import com.robototes.helpers.TestBase;
 import com.robototes.helpers.TestWithScheduler;
