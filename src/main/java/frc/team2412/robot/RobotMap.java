@@ -59,17 +59,17 @@ public class RobotMap {
 	public static Solenoid climbRightPneumatic = new Solenoid(PneumaticPort.CLIMB_RIGHT.id);
 
 	// Motors
-	public static CANSparkMax leftClimbMotor = new CANSparkMax(CANBus.CLIMB1.id, MotorType.kBrushless);
-	public static CANSparkMax rightClimbMotor = new CANSparkMax(CANBus.CLIMB2.id, MotorType.kBrushless);
+	public static CANSparkMax leftClimbMotor = new CANSparkMax("leftClimbMotor", CANBus.CLIMB1.id, MotorType.kBrushless);
+	public static CANSparkMax rightClimbMotor = new CANSparkMax("rightClimbMotor", CANBus.CLIMB2.id, MotorType.kBrushless);
 
 	// INDEX SUBSYSTEM
 	// ---------------------------------------------------------------------------
 
 	// motors
 	public static CANSparkMax indexFrontMotor, indexBackMotor;
-	public static CANSparkMax indexLeftMidMotor = new CANSparkMax(CANBus.INDEX_LEFT_MID.id, MotorType.kBrushless);
+	public static CANSparkMax indexLeftMidMotor = new CANSparkMax("indexLeftMidMotor", CANBus.INDEX_LEFT_MID.id, MotorType.kBrushless);
 
-	public static CANSparkMax indexRightMidMotor = new CANSparkMax(CANBus.INDEX_RIGHT_MID.id, MotorType.kBrushless);
+	public static CANSparkMax indexRightMidMotor = new CANSparkMax("indexRightMidMotor", CANBus.INDEX_RIGHT_MID.id, MotorType.kBrushless);
 
 	public static CANSparkMax intakeFrontMotor, intakeBackMotor;
 
@@ -83,22 +83,22 @@ public class RobotMap {
 
 	private static class IndexIntakeSelector {
 		IndexIntakeSelector() {
-			indexFrontMotor = tryGetMotor(IndexIntakeModule.ONE.getIndexCANID());
-			indexBackMotor = tryGetMotor(IndexIntakeModule.TWO.getIndexCANID());
-			intakeFrontMotor = tryGetMotor(IndexIntakeModule.ONE.getIntakeCANID());
-			intakeBackMotor = tryGetMotor(IndexIntakeModule.TWO.getIntakeCANID());
+			indexFrontMotor = tryGetMotor("indexFrontMotor", IndexIntakeModule.ONE.getIndexCANID());
+			indexBackMotor = tryGetMotor("indexBackMotor", IndexIntakeModule.TWO.getIndexCANID());
+			intakeFrontMotor = tryGetMotor("intakeFrontMotor", IndexIntakeModule.ONE.getIntakeCANID());
+			intakeBackMotor = tryGetMotor("intakeBackMotor", IndexIntakeModule.TWO.getIntakeCANID());
 			if (indexFrontMotor == null) {
-				indexFrontMotor = tryGetMotor(IndexIntakeModule.THREE.getIndexCANID());
-				intakeFrontMotor = tryGetMotor(IndexIntakeModule.THREE.getIntakeCANID());
+				indexFrontMotor = tryGetMotor("indexFrontMotor", IndexIntakeModule.THREE.getIndexCANID());
+				intakeFrontMotor = tryGetMotor("intakeFrontMotor", IndexIntakeModule.THREE.getIntakeCANID());
 			} else if (indexBackMotor == null) {
-				indexBackMotor = tryGetMotor(IndexIntakeModule.THREE.getIndexCANID());
-				intakeBackMotor = tryGetMotor(IndexIntakeModule.THREE.getIntakeCANID());
+				indexBackMotor = tryGetMotor("indexBackMotor", IndexIntakeModule.THREE.getIndexCANID());
+				intakeBackMotor = tryGetMotor("intakeBackMotor", IndexIntakeModule.THREE.getIntakeCANID());
 			}
 		}
 
-		private CANSparkMax tryGetMotor(int motorId) {
+		private CANSparkMax tryGetMotor(String name, int motorId) {
 			try {
-				return new CANSparkMax(motorId, MotorType.kBrushless);
+				return new CANSparkMax(name, motorId, MotorType.kBrushless);
 			} catch (Exception ignored) {
 				return null;
 			}
@@ -117,9 +117,9 @@ public class RobotMap {
 
 	// Flywheel Subsystem
 	// ------------------------------------------------------------------------------
-	public static CANSparkMax flywheelLeftMotor = new CANSparkMax(CANBus.FLYWHEEL_LEFT.id, MotorType.kBrushless);
+	public static CANSparkMax flywheelLeftMotor = new CANSparkMax("flywheelLeftMotor", CANBus.FLYWHEEL_LEFT.id, MotorType.kBrushless);
 
-	public static CANSparkMax flywheelRightMotor = new CANSparkMax(CANBus.FLYWHEEL_RIGHT.id, MotorType.kBrushless);
+	public static CANSparkMax flywheelRightMotor = new CANSparkMax("flywheelRightMotor", CANBus.FLYWHEEL_RIGHT.id, MotorType.kBrushless);
 
 	// Hood Subsystem
 	// -----------------------------------------------------------------------------
