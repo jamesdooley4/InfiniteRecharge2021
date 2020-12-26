@@ -1,7 +1,7 @@
 package com.robototes.helpers;
 
 import edu.wpi.first.hal.HAL;
-import edu.wpi.first.hal.sim.DriverStationSim;
+import edu.wpi.first.wpilibj.simulation.DriverStationSim;
 import edu.wpi.first.wpilibj.DriverStation;
 
 /**
