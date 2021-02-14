@@ -1,6 +1,6 @@
 plugins {
     id "java"
-    id "edu.wpi.first.GradleRIO" version "2020.3.2"
+    id "edu.wpi.first.GradleRIO" version "2021.1.2"
     id "eclipse"
 }
 
@@ -63,7 +63,7 @@ dependencies {
 	implementation "com.github.Oblarg.Oblog:lib:3.1.0"	
 	implementation 'com.github.Robototes:2412RobotLibrary:2020.08.03'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 	testCompile 'org.mockito:mockito-core:3.2.0'
 	testCompile 'net.bytebuddy:byte-buddy-agent:1.10.3'
 	testCompile 'net.bytebuddy:byte-buddy:1.10.3'
@@ -72,6 +72,7 @@ dependencies {
     // Enable simulation gui support. Must check the box in vscode to enable support
     // upon debugging
     simulation wpi.deps.sim.gui(wpi.platforms.desktop, false)
+    simulation wpi.deps.sim.driverstation(wpi.platforms.desktop, false)
 }
 
 // Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
